@@ -1,0 +1,14 @@
+public static String convertToTitle(int n) {
+        StringBuilder sb = new StringBuilder();
+        while(n>26) {
+            int tmp = n % 26;
+            n /= 26;
+            if(tmp == 0) {
+                tmp = 26;
+                n = n - 1;
+            }
+            sb.insert(0, (char)(tmp+64));
+        }
+        sb.insert(0, (char)(n+64));
+        return sb.toString();
+}
